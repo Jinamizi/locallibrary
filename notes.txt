@@ -15,10 +15,22 @@ Then return the new (updated) context.
 
 within the for loop Django will also create other variables that you can use to track the iteration
 forloop.last - perform conditional processing the last time that the loop is run.
+forloop.first
 forloop.counter #starting index 1
 forloop.counter0 #starting index 0
 forloop.parentloop
 
+<int:pk>
+<something>
 
+if you need more refined filtering (eg, to filter only strings that have a certain number of characters) then you need to use the re_path() <check> method
+re_path(r'^book/(?P<pk>\d+)$', views.BookDetailView.as_view(), name='book-detail'),
+
+you can pass a dictionary containing additional options <check> to the view
+For example, given the path shown below, for a request to /myurl/halibut/ Django will call views.my_view(request, fish=halibut, my_template_name='some_path').
+path('myurl/<int:fish>', views.my_view, {'my_template_name': 'some_path'}, name='aurl'),
+
+DetailView
+if a requested record does not exist Http404 exception will be raised. automatically. in production, this will automatically display an appropriate "resource not found" page, which you can customize if desired. <check>
 
 

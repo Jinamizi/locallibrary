@@ -40,3 +40,5 @@ def test(request):
     #books = Book.objects.all()
     return render(request, 'test.html', context={"books":books})
 
+class BookDetailView(generic.DetailView):
+    model = Book
