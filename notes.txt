@@ -1,0 +1,24 @@
+generic
+from django.views import generic
+
+ListView
+override
+get_queryset - to change the list of records returned
+get_context_data(self, **kwargs) - in order to pass additional context variables to the template
+When doing this it is important to follow the pattern used above:
+
+First get the existing context from our superclass.
+Then add your new context information.
+Then return the new (updated) context.
+
+{% empty %} used to define what happens if the book_list is empty.
+
+within the for loop Django will also create other variables that you can use to track the iteration
+forloop.last - perform conditional processing the last time that the loop is run.
+forloop.counter #starting index 1
+forloop.counter0 #starting index 0
+forloop.parentloop
+
+
+
+

@@ -1,0 +1,4 @@
+locallibrary/__pycache__
+db.sqlite3
+catalog/__pycache__
+catalog/migrations

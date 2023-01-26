@@ -55,8 +55,8 @@ ROOT_URLCONF = 'locallibrary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [], #can specify specific locations for Django to search for directories 
+        'APP_DIRS': True, #tells Django to search for templates in a subdirectory of each application in the project, named "templates"
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

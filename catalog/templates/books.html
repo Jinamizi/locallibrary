@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Books</title>{% endblock %}
+
+{% block content %} 
+{% if books %} 
+    <p>Books count: {{ books.instancecount }}</p>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Copies</th>
+        </tr>
+    {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.instance_count }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+{% endblock %}
