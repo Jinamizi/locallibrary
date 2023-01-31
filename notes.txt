@@ -33,4 +33,20 @@ path('myurl/<int:fish>', views.my_view, {'my_template_name': 'some_path'}, name=
 DetailView
 if a requested record does not exist Http404 exception will be raised. automatically. in production, this will automatically display an appropriate "resource not found" page, which you can customize if desired. <check>
 
+get_object_or_404
+
+<a href="{% url 'author-detail' book.author.pk %}">{{ book.author }}</a>
+<a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a>
+the 2nd is preferred
+
+book.bookinstance_set.all() return the set of BookInstance records associated with a particular Book.
+foreignkey - one to many
+
+when using paginator - rem to order
+ordering choices:
+1. Add a ordering inside a class Meta declaration on your model.
+2. Add a queryset attribute in your custom class-based view, specifying an order_by().
+3. Adding a get_queryset method to your custom class-based view and also specify the order_by().
+
+jQuery is a javascript library. simplifies JS programming. Do more with JS, but with less code.
 
